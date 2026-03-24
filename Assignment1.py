@@ -18,3 +18,9 @@ def find_gcd(x,y):
     
     quotient = bigger // smaller
     remainder = bigger % smaller
+
+    bigger = smaller
+    smaller = quotient
+    
+    quotient = bigger // smaller
+    remainder = bigger % smaller
