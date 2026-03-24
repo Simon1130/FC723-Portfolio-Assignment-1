@@ -15,12 +15,21 @@ def find_gcd(x,y):
     else:
         bigger = y
         smaller = x
-    
+# integer division of bigger and smaller        
     quotient = bigger // smaller
+#modulus of bigger divide by smaller
     remainder = bigger % smaller
 
-    bigger = smaller
-    smaller = quotient
+#making a loop to keep find the GCD until remainder hits 0    
+    while remainder != 0:
     
-    quotient = bigger // smaller
-    remainder = bigger % smaller
+        bigger = smaller
+        smaller = remainder
+        
+        quotient = bigger // smaller
+        remainder = bigger % smaller
+#smaller input and remainder from last term is the GCD        
+    return smaller
+    
+print(find_gcd(1701, 3768))
+        
