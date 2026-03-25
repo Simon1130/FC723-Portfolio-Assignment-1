@@ -5,21 +5,16 @@ Created on Mon Mar 23 15:36:54 2026
 
 @author: simon
 """
-
-#modulus of bigger divide by smaller
-def find_remainder(x,y):
-    return x % y
-
 def find_gcd(input1,input2):
-#check the input is integer, isinstance to check it is integer, using not 
-#if input 1 and 2 not integer
-    if not isinstance(input1, int) or not isinstance(input2, int):
-        return "This function only accept integer inputs."
-#GCD wont work if two input is 0
+#use isinstance to check the input is integer or not
+    if not isinstance(input1, int) or not isinstance(input2, int): #if input 1 and 2 not integer
+#using not, return error if the input is not integer
+        return "Error. This function only accept integer inputs."
+#GCD would not work if both inputs are 0
     if input1 == 0 and input2 == 0:
-        return "This function can not accept 2 zero inputs."
+        return "This function can not accept 2 '0' inputs."
 
-#Check x or y is bigger
+#check whether input1 or input2 is bigger, which is smaller
     if input1 > input2:        
         bigger = input1
         smaller = input2
@@ -27,14 +22,15 @@ def find_gcd(input1,input2):
         bigger = input2
         smaller = input1
 
-#making a loop to keep find the GCD until remainder hits 0    
+#making a loop to keep find the GCD until smaller input hits 0    
     while smaller != 0:
+#use modulus to find the remainder
         remainder = bigger % smaller
+#the value of bigger input will change to the value of smaller input
         bigger = smaller
+#the value of smaller input will change to the value of remainder
         smaller = remainder
-        
+
+#if smaller input hits 0 bigger now will be the GCD    
 #bigger now contain value of smaller input, smaller and remainder is the GCD
     return bigger
-    
-print(find_gcd(10, 45))
-        
