@@ -12,7 +12,7 @@ def find_gcd(input1,input2):
         return "Error. This function only accept integer inputs."
 #GCD would not work if both inputs are 0
     if input1 == 0 and input2 == 0:
-        return "This function can not accept 2 '0' inputs."
+        return "Error. This function can not accept 2 '0' inputs."
 
 #check whether input1 or input2 is bigger, which is smaller
     if input1 > input2:        
