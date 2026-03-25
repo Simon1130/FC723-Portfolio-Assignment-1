@@ -7,9 +7,10 @@ Created on Mon Mar 23 15:36:54 2026
 """
 def find_gcd(input1,input2):
 #use isinstance to check the input is integer or not
-    if not isinstance(input1, int) or not isinstance(input2, int): #if input 1 and 2 not integer
+#if input 1 and 2 not integer, and they are all positive
+    if not isinstance(input1, int) or not isinstance(input2, int) or input1 < 0 or input2 < 0: 
 #using not, return error if the input is not integer
-        return "Error. This function only accept integer inputs."
+        return "Error. This function only accept positive integer inputs."
 #GCD would not work if both inputs are 0
     if input1 == 0 and input2 == 0:
         return "Error. This function can not accept 2 '0' inputs."
@@ -26,6 +27,7 @@ def find_gcd(input1,input2):
     while smaller != 0:
 #use modulus to find the remainder
         remainder = bigger % smaller
+        print(bigger, smaller, remainder)
 #the value of bigger input will change to the value of smaller input
         bigger = smaller
 #the value of smaller input will change to the value of remainder
@@ -34,3 +36,4 @@ def find_gcd(input1,input2):
 #if smaller input hits 0 bigger now will be the GCD    
 #bigger now contain value of smaller input, smaller and remainder is the GCD
     return bigger
+print(find_gcd(45, 10))
